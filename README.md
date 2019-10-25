@@ -1,0 +1,2 @@
+# pocketpharmacy
+With pocketpharmacy.com, buying medicines online is sure to become easier and more convenient than ever. With fast home delivery, amazing discounts available within almost all product categories as we are direct retailing from the parent companies, no minimum order, easy return policies on all medications and doctor's consultation for emergency case, we are going to bring your reliable medicinal store on your doorstep and much more.
