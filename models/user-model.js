@@ -14,13 +14,14 @@ module.exports = {
         });
     },
     validate: function(user, callback) {
-        var sql = "select * from user where username=? and password=? and type=?";
+        var sql = "select type from user where username=? and password=?";
         db.getResults(sql, [user.username, user.password, user.type], function(result) {
 
             if (result.length > 0) {
-                callback(true);
+                console.log('result pise');
+                callback(result[0]);
             } else {
-                callback(false);
+                callback();
             }
         });
     },
@@ -38,8 +39,8 @@ module.exports = {
     },
     insert: function(user, callback) {
 
-        var sql = "insert into user values('', ?, ? ,? ,?)";
-        db.execute(sql, [user.username, user.password, user.type, user.personalinfo], function(status) {
+        var sql = "insert into user values('', ?, ? ,? ,? ,? ,?)";
+        db.execute(sql, [user.username, user.password, user.email, user.phone, user.address, user.type], function(status) {
             callback(status);
         });
     },
