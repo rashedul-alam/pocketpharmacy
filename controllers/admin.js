@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('/', function(request, response) {
     console.log("admin");
-    response.render('admin/index');
+    response.render('admin/index', { username: request.session.username });
 });
 
 

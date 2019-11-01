@@ -14,11 +14,12 @@ module.exports = {
         });
     },
     validate: function(user, callback) {
-        var sql = "select type from user where email=? and password=?";
+        var sql = "select type , username from user where email=? and password=?";
         db.getResults(sql, [user.email, user.password, user.type], function(result) {
 
             if (result.length > 0) {
                 console.log('result pise');
+                console.log(result);
                 callback(result[0]);
             } else {
                 callback();

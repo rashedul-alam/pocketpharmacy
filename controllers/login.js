@@ -2,6 +2,16 @@ var express = require('express');
 var userModel = require('./../models/user-model');
 var router = express.Router();
 
+
+router.get('*', function(request, response, next) {
+
+    if (request.cookies['username'] != null) {
+        next();
+    } else {
+        response.redirect('/logout');
+    }
+
+});
 router.get('/', function(request, response) {
     console.log("login");
     response.render('login/index');
@@ -17,9 +27,14 @@ router.post('/', function(request, response) {
     userModel.validate(user, function(result) {
         if (result != null) {
             console.log(result.type);
+            console.log(result.username);
 
             response.cookie('email', request.body.email);
             response.cookie('type', result.type);
+            response.cookie('username', result.username);
+            request.session.username = result.username;
+            console.log(request.session.username);
+
             if (result.type == 'admin') {
                 console.log("admin in");
                 response.redirect('/admin');
