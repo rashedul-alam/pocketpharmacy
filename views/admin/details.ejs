@@ -7,7 +7,7 @@
 
 <body>
     <h1>User Details</h1>
-    <a href="/user/userList">Back</a> |
+    <a href="/admin">Back</a> |
     <a href="/logout">logout</a>
 
     <table border="1">
@@ -45,6 +45,12 @@
             <td>type</td>
             <td>
                 <%= type %>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="../edit/<%= email %>">EDIT</a></td>
+            <td>
+                <a href="">Delete *Kaj hoy nai.</a>
             </td>
         </tr>
 

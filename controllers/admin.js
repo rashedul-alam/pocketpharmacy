@@ -33,4 +33,35 @@ router.get('/details/:email', function(request, response) {
 
 });
 
+router.get('/edit/:email', function(request, response) {
+    console.log("edit get");
+
+    userModel.getByEmail(request.params.email, function(result) {
+        response.render('admin/edit', result);
+    });
+
+});
+
+router.post('/edit/:email', function(request, response) {
+    console.log("edit post");
+    var user = {
+        username: request.body.username,
+        password: request.body.password,
+        email: request.params.email,
+        phone: request.body.phone,
+        address: request.body.address,
+
+    };
+
+    userModel.update(user, function(status) {
+
+        if (status) {
+            response.redirect('../details/' + request.params.email);
+        } else {
+            response.redirect('/admin/edit/' + request.params.email);
+        }
+    });
+
+});
+
 module.exports = router;
