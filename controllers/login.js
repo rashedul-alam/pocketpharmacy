@@ -9,7 +9,7 @@ router.get('/', function(request, response) {
 router.post('/', function(request, response) {
 
     var user = {
-        username: request.body.username,
+        email: request.body.email,
         password: request.body.password,
 
     };
@@ -18,7 +18,7 @@ router.post('/', function(request, response) {
         if (result != null) {
             console.log(result.type);
 
-            response.cookie('username', request.body.username);
+            response.cookie('email', request.body.email);
             response.cookie('type', result.type);
             if (result.type == 'admin') {
                 console.log("admin in");

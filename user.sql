@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 11:57 AM
+-- Generation Time: Nov 01, 2019 at 03:01 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `id` int(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -42,14 +41,13 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone`, `address`, `type`) VALUES
-(1, 'admin', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin'),
-(2, 'doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor'),
-(3, 'doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor'),
-(4, 'man1', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager'),
-(5, 'cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer'),
-(6, 'cus2', 'cus2', 'cus2@c.c', '4854354458', 'kuratoli', 'customer'),
-(7, 'admin1', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin');
+INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`) VALUES
+('admin1', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin'),
+('admin', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin'),
+('cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer'),
+('cus2', 'cus2', 'cus2@c.c', '4854354458', 'kuratoli', 'customer'),
+('doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor'),
+('man1', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager');
 
 --
 -- Indexes for dumped tables
@@ -59,17 +57,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone`, `address`, `
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  ADD PRIMARY KEY (`email`),
+  ADD UNIQUE KEY `email` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
