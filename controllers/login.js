@@ -6,37 +6,45 @@ router.get('/', function(request, response) {
     console.log("login");
     response.render('login/index');
 });
+router.post('/', function(request, response) {
 
-// router.post('/', function(request, response) {
+    var user = {
+        username: request.body.username,
+        password: request.body.password,
 
-//     var user = {
-//         username: request.body.username,
-//         password: request.body.password,
-//         type: request.body.type
-//     };
+    };
 
-//     userModel.validate(user, function(status) {
-//         if (status) {
-//             response.cookie('username', request.body.username);
-//             response.cookie('type', request.body.type);
-//             if (request.body.type == 'admin') {
-//                 console.log("admin");
-//                 response.redirect('/adminhome');
-//             } else if (request.body.type == 'scout') {
-//                 console.log("scot");
-//                 response.redirect('/scouthome');
+    userModel.validate(user, function(result) {
+        if (result != null) {
+            console.log(result.type);
 
-//             } else if (request.body.type == 'guser') {
-//                 console.log("guser");
-//                 response.redirect('/guserhome');
+            response.cookie('username', request.body.username);
+            response.cookie('type', result.type);
+            if (result.type == 'admin') {
+                console.log("admin in");
+                response.redirect('/admin');
+            } else if (result.type == 'customer') {
+                console.log("customer");
+                response.redirect('/customer');
 
-//             }
+            } else if (result.type == 'doctor') {
+                console.log("doctor");
+                response.redirect('/doctor');
 
-//         } else {
-//             response.send('invalid username/password');
-//         }
-//     });
+            } else if (result.type == 'manager') {
+                console.log("manager");
+                response.redirect('/manager');
 
-// });
+            }
+
+
+        } else {
+
+            response.send('invalid username/password');
+        }
+    });
+
+});
+
 
 module.exports = router;

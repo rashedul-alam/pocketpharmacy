@@ -14,13 +14,14 @@ module.exports = {
         });
     },
     validate: function(user, callback) {
-        var sql = "select * from user where username=? and password=? and type=?";
+        var sql = "select type from user where username=? and password=?";
         db.getResults(sql, [user.username, user.password, user.type], function(result) {
 
             if (result.length > 0) {
-                callback(true);
+                console.log('result pise');
+                callback(result[0]);
             } else {
-                callback(false);
+                callback();
             }
         });
     },
