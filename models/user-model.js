@@ -2,7 +2,7 @@ var db = require('./db')
 
 module.exports = {
 
-    getByemail: function(email, callback) {
+    getByEmail: function(email, callback) {
 
         var sql = "select * from user where email=?";
         db.getResults(sql, [email], function(result) {

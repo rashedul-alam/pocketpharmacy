@@ -2,20 +2,12 @@ var express = require('express');
 var userModel = require('./../models/user-model');
 var router = express.Router();
 
-
-router.get('*', function(request, response, next) {
-
-    if (request.cookies['username'] != null) {
-        next();
-    } else {
-        response.redirect('/logout');
-    }
-
-});
 router.get('/', function(request, response) {
     console.log("login");
     response.render('login/index');
 });
+
+
 router.post('/', function(request, response) {
 
     var user = {
@@ -32,7 +24,13 @@ router.post('/', function(request, response) {
             response.cookie('email', request.body.email);
             response.cookie('type', result.type);
             response.cookie('username', result.username);
+
             request.session.username = result.username;
+            request.session.email = request.body.email;
+            request.session.type = result.type;
+
+            console.log(request.session.email);
+
             console.log(request.session.username);
 
             if (result.type == 'admin') {
