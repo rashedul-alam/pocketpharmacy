@@ -64,4 +64,15 @@ router.post('/edit/:email', function(request, response) {
 
 });
 
+
+router.get('/userList', function(request, response) {
+    console.log("userlist get");
+
+    userModel.getAll(function(result) {
+        console.log("userlist get all");
+        response.render('admin/userlist', { user: result });
+    });
+});
+
+
 module.exports = router;
