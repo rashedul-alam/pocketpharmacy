@@ -32,8 +32,10 @@ module.exports = {
         db.getResults(sql, [], function(results) {
 
             if (results.length > 0) {
+                console.log('list pise');
                 callback(results);
             } else {
+                console.log('list pise nai');
                 callback([]);
             }
         });
