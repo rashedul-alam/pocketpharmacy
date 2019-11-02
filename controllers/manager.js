@@ -7,6 +7,11 @@ router.get('/', function(request, response) {
     response.render('manager/index');
 });
 
+router.get('/salary', function(request, response) {
+    console.log("manager");
+    response.render('manager/salary');
+});
+
 
 
 module.exports = router;
