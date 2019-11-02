@@ -49,17 +49,17 @@ module.exports = {
     },
     update: function(user, callback) {
 
-        var sql = "update user set username=?, password=?, phone=? , address=? where email=?";
+        var sql = "update user set username=?, password=?, phone=? , address=? , salary=? where email=?";
         console.log(user);
         console.log("fatt");
-        db.execute(sql, [user.username, user.password, user.phone, user.address, user.email], function(status) {
+        db.execute(sql, [user.username, user.password, user.phone, user.address, user.salary, user.email], function(status) {
             callback(status);
         });
     },
-    // delete: function(email, callback) {
-    //     var sql = "delete from user where email=?";
-    //     db.execute(sql, [email], function(status) {
-    //         callback(status);
-    //     });
-    // }
+    delete: function(email, callback) {
+        var sql = "delete from user where email=?";
+        db.execute(sql, [email], function(status) {
+            callback(status);
+        });
+    }
 }
