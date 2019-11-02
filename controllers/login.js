@@ -37,7 +37,7 @@ router.post('/', function(request, response) {
                 console.log("admin in");
                 response.redirect('/admin');
             } else if (result.type == 'customer') {
-                console.log("customer");
+                console.log("customer log");
                 response.redirect('/customer');
 
             } else if (result.type == 'doctor') {
