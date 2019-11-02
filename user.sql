@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 03:01 PM
+-- Generation Time: Nov 02, 2019 at 08:26 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -34,20 +34,21 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `address` varchar(60) NOT NULL,
-  `type` varchar(20) NOT NULL
+  `type` varchar(20) NOT NULL,
+  `salary` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`) VALUES
-('admin1', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin'),
-('admin', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin'),
-('cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer'),
-('cus2', 'cus2', 'cus2@c.c', '4854354458', 'kuratoli', 'customer'),
-('doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor'),
-('man1', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager');
+INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`, `salary`) VALUES
+('GUGA', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin', NULL),
+('admin', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin', NULL),
+('cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer', NULL),
+('cus2', 'cus2', 'cus2@c.c', '4854354458', 'kuratoli', 'customer', NULL),
+('doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor', NULL),
+('man1', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager', NULL);
 
 --
 -- Indexes for dumped tables
