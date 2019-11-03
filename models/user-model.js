@@ -42,7 +42,7 @@ module.exports = {
     },
     insert: function(user, callback) {
 
-        var sql = "insert into user values(?, ? ,? ,? ,? ,?)";
+        var sql = "insert into user values(?, ? ,? ,? ,? ,? ,'')";
         db.execute(sql, [user.username, user.password, user.email, user.phone, user.address, user.type], function(status) {
             callback(status);
         });
