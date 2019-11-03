@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var expSession = require('express-session');
 var cookieParser = require('cookie-parser');
 var ejs = require('ejs');
+var io = require('socket.io').listen(app) ;
 var login = require('./controllers/login');
 var signup = require('./controllers/signup');
 var logout = require('./controllers/logout');
@@ -13,6 +14,7 @@ var customer = require('./controllers/customer');
 var manager = require('./controllers/manager');
 var doctor = require('./controllers/doctor');
 var app = express();
+
 
 //CONFIGURATION
 app.set('view engine', 'ejs');

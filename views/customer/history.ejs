@@ -6,23 +6,13 @@
 </head>
 
 <body>
-    <h1>Customer Details</h1>
+    <h1>Purchase</h1>
     <a href="/customer">Back</a> |
     <a href="/logout">logout</a>
 
     <table border="10">
-        <tr>
-            <td>USERNAME</td>
-            <td>
-                <%= username %>
-            </td>
-        </tr>
-        <tr>
-            <td>password</td>
-            <td>
-                <%= password %>
-            </td>
-        </tr>
+        
+     
         <tr>
             <td>email</td>
             <td>
@@ -30,29 +20,49 @@
             </td>
         </tr>
         <tr>
-            <td>phone</td>
+            <td>Date:</td>
             <td>
-                <%= phone %>
+                <%= date %>
             </td>
         </tr>
         <tr>
-            <td>address</td>
+            <td>product id:</td>
             <td>
-                <%= address %>
+                <%= productid %>
             </td>
         </tr>
         <tr>
-            <td>type</td>
+            <td>product name:</td>
             <td>
-                <%= type %>
+                <%= productname %>
             </td>
         </tr>
         <tr>
-            <td><a href="../edit/<%= email %>">EDIT profile</a></td>
+            <td>Product Price:</td>
             <td>
-                <a href="z".</a>
+                <%= productprice %>
             </td>
         </tr>
+        <tr>
+            <td>Product Quantity:</td>
+            <td>
+                <%= productquantity %>
+            </td>
+        </tr>
+        <tr>
+            <td>total:</td>
+            <td>
+                <%= total %>
+            </td>
+        </tr>
+        <tr>
+            <td>prescription</td>
+            <td>
+                <%= prescription %>
+            </td>
+        </tr>
+
+        
 
     </table>
 

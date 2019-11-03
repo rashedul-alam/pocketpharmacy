@@ -7,12 +7,9 @@
 
 <body>
     <h1>User List</h1>
-    <a href="/admin">Back</a>|
+    <a href="/admin">Back</a> |
     <a href="/logout">logout</a>
-    </br>
-    </br>
 
-    <h2>ALL USER</h2>
     <table border="1">
         <tr>
 
@@ -49,233 +46,24 @@
                     <td>
                         <%= user[i].type %>
                     </td>
-
-                    <td>
+                    <!-- <td>
                         <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
                         <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
                         <a href="/admin/details/<%= user[i].email %>">Details</a>
-                    </td>
+                    </td> -->
+
+
+
+
+
+
+
                 </tr>
                 <% } %>
 
 
     </table>
-    </br>
-    </br>
 
-
-    <h2>ADMIN</h2>
-    <table border="1">
-        <tr>
-
-            <td>USERNAME</td>
-            <td>PASSWORD</td>
-            <td>EMAIL</td>
-            <td>PHONE</td>
-            <td>ADDRESS</td>
-            <td>TYPE</td>
-            <td>ACTION</td>
-        </tr>
-
-
-
-        <% for(var i=0; i < user.length; i++){ if(user[i].type == "admin") {%>
-
-            <tr>
-
-                <td>
-                    <%= user[i].username %>
-                </td>
-                <td>
-                    <%= user[i].password %>
-                </td>
-                <td>
-                    <%= user[i].email %>
-                </td>
-                <td>
-                    <%= user[i].phone %>
-                </td>
-                <td>
-                    <%= user[i].address %>
-                </td>
-                <td>
-                    <%= user[i].type %>
-                </td>
-
-                <td>
-                    <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
-                    <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
-                </td>
-            </tr>
-            <% }} %>
-
-
-    </table>
-    </br>
-    </br>
-
-    <h2>MANAGER</h2>
-    <table border="1">
-        <tr>
-
-            <td>USERNAME</td>
-            <td>PASSWORD</td>
-            <td>EMAIL</td>
-            <td>PHONE</td>
-            <td>ADDRESS</td>
-            <td>TYPE</td>
-            <td>SALARY</td>
-            <td>ACTION</td>
-        </tr>
-
-
-
-        <% for(var i=0; i < user.length; i++){ if(user[i].type == "manager") {%>
-
-            <tr>
-
-                <td>
-                    <%= user[i].username %>
-                </td>
-                <td>
-                    <%= user[i].password %>
-                </td>
-                <td>
-                    <%= user[i].email %>
-                </td>
-                <td>
-                    <%= user[i].phone %>
-                </td>
-                <td>
-                    <%= user[i].address %>
-                </td>
-                <td>
-                    <%= user[i].type %>
-                </td>
-                <td>
-                    <%= user[i].salary %>
-                </td>
-
-                <td>
-                    <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
-                    <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
-                </td>
-            </tr>
-            <% }} %>
-
-
-    </table>
-    </br>
-    </br>
-
-    <h2>DOCTOR</h2>
-    <table border="1">
-        <tr>
-
-            <td>USERNAME</td>
-            <td>PASSWORD</td>
-            <td>EMAIL</td>
-            <td>PHONE</td>
-            <td>ADDRESS</td>
-            <td>TYPE</td>
-            <td>SALARY</td>
-            <td>ACTION</td>
-        </tr>
-
-
-
-        <% for(var i=0; i < user.length; i++){ if(user[i].type == "doctor") {%>
-
-            <tr>
-
-                <td>
-                    <%= user[i].username %>
-                </td>
-                <td>
-                    <%= user[i].password %>
-                </td>
-                <td>
-                    <%= user[i].email %>
-                </td>
-                <td>
-                    <%= user[i].phone %>
-                </td>
-                <td>
-                    <%= user[i].address %>
-                </td>
-                <td>
-                    <%= user[i].type %>
-                </td>
-                <td>
-                    <%= user[i].salary %>
-                </td>
-
-                <td>
-                    <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
-                    <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
-                </td>
-            </tr>
-            <% }} %>
-
-
-    </table>
-    </br>
-    </br>
-
-    <h2>CUSTOMER</h2>
-    <table border="1">
-        <tr>
-
-            <td>USERNAME</td>
-            <td>PASSWORD</td>
-            <td>EMAIL</td>
-            <td>PHONE</td>
-            <td>ADDRESS</td>
-            <td>TYPE</td>
-            <td>ACTION</td>
-        </tr>
-
-
-
-        <% for(var i=0; i < user.length; i++){ if(user[i].type == "customer") {%>
-
-            <tr>
-
-                <td>
-                    <%= user[i].username %>
-                </td>
-                <td>
-                    <%= user[i].password %>
-                </td>
-                <td>
-                    <%= user[i].email %>
-                </td>
-                <td>
-                    <%= user[i].phone %>
-                </td>
-                <td>
-                    <%= user[i].address %>
-                </td>
-                <td>
-                    <%= user[i].type %>
-                </td>
-
-
-                <td>
-                    <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
-                    <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
-                </td>
-            </tr>
-            <% }} %>
-
-
-    </table>
-    </br>
-    </br>
 
 
 
