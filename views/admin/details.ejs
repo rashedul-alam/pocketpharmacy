@@ -2,13 +2,15 @@
 <html>
 
 <head>
-    <title>Home page</title>
+    <title>Details page</title>
 </head>
 
 <body>
     <h1>User Details</h1>
-    <a href="/admin">Back</a> |
+    <a href="/admin/userList">UserList</a> |
     <a href="/logout">logout</a>
+    </br>
+    </br>
 
     <table border="1">
         <tr>
@@ -47,12 +49,21 @@
                 <%= type %>
             </td>
         </tr>
-        <tr>
-            <td><a href="../edit/<%= email %>">EDIT</a></td>
-            <td>
-                <a href="">Delete *Kaj hoy nai.</a>
-            </td>
-        </tr>
+        <% if(type=="manager" || type=="doctor"){ %>
+            <tr>
+                <td>Salary</td>
+                <td>
+                    <%= salary %>
+                </td>
+            </tr>
+            <% } %>
+                <% if(type=="customer"){ %>
+                    <tr>
+                        <td><a href="../history/<%= email %>">Order History</a></td>
+
+                    </tr>
+                    <% } %>
+
 
     </table>
 
