@@ -1,8 +1,11 @@
 var express = require('express');
+
+var userReports = require('./../models/user-reports');
 var userModel = require('./../models/user-model');
+
 var customerhistoryModel = require('./../models/customerhistory-model');
 var router = express.Router();
-var io = require('socket.io') ;
+//var io = require('socket.io') ;
 
 router.get('*', function(request, response, next) {
 
@@ -28,7 +31,8 @@ router.get('/', function(request, response) {
 router.get('/history/:email', function(request, response) {
 
     customerhistoryModel.getByEmail(request.params.email, function(result) {
-        
+        console.log(result);
+
         response.render('customer/history', result);
     });
 
@@ -36,7 +40,7 @@ router.get('/history/:email', function(request, response) {
 router.get('/details/:email', function(request, response) {
 
     userModel.getByEmail(request.params.email, function(result) {
-        
+
         response.render('customer/details', result);
     });
 
@@ -78,19 +82,19 @@ router.get('/chat/:email', function(request, response) {
     userModel.getByEmail(request.params.email, function(result) {
         console.log('result');
 
-       
-        
-        response.render('customer/chat',result );
-       // io.sockets.on('connection', function(socket){
-              // console.log('Socket Connected...');
-              // console.log(result);
-             //  socket.on('email', function(data, callback);
-   
 
-     });
-    
-      }); 
-        
+
+        response.render('customer/chat', result);
+        // io.sockets.on('connection', function(socket){
+        // console.log('Socket Connected...');
+        // console.log(result);
+        //  socket.on('email', function(data, callback);
+
+
+    });
+
+});
+
 
 router.get('/history/:email', function(request, response) {
     console.log("history get");
@@ -98,19 +102,63 @@ router.get('/history/:email', function(request, response) {
     userModel.getByEmail(request.params.email, function(result) {
         console.log('result');
 
-       
-        
-        response.render('customer/history',result );
-       // io.sockets.on('connection', function(socket){
-              // console.log('Socket Connected...');
-              // console.log(result);
-             //  socket.on('email', function(data, callback);
-   
 
-     });
-    
-      }); 
-        
+
+        response.render('customer/history', result);
+        // io.sockets.on('connection', function(socket){
+        // console.log('Socket Connected...');
+        // console.log(result);
+        //  socket.on('email', function(data, callback);
+
+
+    });
+
+});
+router.get('/reports/:email', function(request, response) {
+
+    response.render('customer/reports');
+});
+
+router.post('/reports/:email', function(request, response) {
+    console.log("RE get");
+
+    userReports.insert(request.params.email, function(result) {
+        console.log('result');
+
+
+
+        var user = {
+
+            email: request.params.email,
+            reports: request.body.reports,
+
+            type: request.session.type
+        };
+        console.log(user);
+        userReports.insert(user, function(status) {
+            if (status) {
+                console.log("success in");
+
+                response.redirect('/customer');
+            } else {
+                response.redirect('/customer');
+            }
+        });
+
+
+
+
+        // io.sockets.on('connection', function(socket){
+        // console.log('Socket Connected...');
+        // console.log(result);
+        //  socket.on('email', function(data, callback);
+
+
+    });
+
+});
+
+
 
 
 

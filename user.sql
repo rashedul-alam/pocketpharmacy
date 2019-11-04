@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 03:01 PM
+
+-- Generation Time: Nov 04, 2019 at 07:46 AM
+
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -34,20 +36,25 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `address` varchar(60) NOT NULL,
-  `type` varchar(20) NOT NULL
+
+  `type` varchar(20) NOT NULL,
+  `salary` int(11) DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`) VALUES
-('admin1', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin'),
-('admin', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin'),
-('cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer'),
-('cus2', 'cus2', 'cus2@c.c', '4854354458', 'kuratoli', 'customer'),
-('doc1', 'doc1', 'doc1@d.c', '123456789', 'mirpur 10', 'doctor'),
-('man1', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager');
+INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`, `salary`) VALUES
+('PoPO', 'admin1', 'admin1@a.c', '45358545484584', 'basundora ,block C', 'admin', NULL),
+('admin01', 'admin', 'admin@a.c', '01762255226', 'mirpur 14', 'admin', NULL),
+('cus1', 'cus1', 'cus1@c.c', '8463486486', 'gulshan', 'customer', NULL),
+('doc000', 'doc1', 'doc1@d.c', '1234', 'mirpur 10', 'doctor', 1000),
+('guluta', 'guluta', 'guluta@g.g', '545543', 'nikunjo', 'customer', 0),
+('man11', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager', 200),
+('xxxxxx', 'xxxxxx', 'xxxxxx@x', '2113223', 'mirpr13', 'manager', 50);
+
 
 --
 -- Indexes for dumped tables

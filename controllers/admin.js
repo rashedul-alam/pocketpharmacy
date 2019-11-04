@@ -1,5 +1,7 @@
 var express = require('express');
 var userModel = require('./../models/user-model');
+var userReports = require('./../models/user-reports');
+var customerhistoryModel = require('./../models/customerhistory-model');
 var router = express.Router();
 
 router.get('*', function(request, response, next) {
@@ -50,6 +52,7 @@ router.post('/edit/:email', function(request, response) {
         email: request.params.email,
         phone: request.body.phone,
         address: request.body.address,
+        salary: request.body.salary,
 
     };
 
@@ -73,6 +76,56 @@ router.get('/userList', function(request, response) {
         response.render('admin/userlist', { user: result });
     });
 });
+router.get('/reports', function(request, response) {
+    console.log("reports get");
+
+    userReports.getAll(function(result) {
+        console.log(" get all");
+        response.render('admin/reports', { user: result });
+    });
+});
+
+
+
+
+router.get('/delete/:email', function(request, response) {
+    console.log("delete ");
+    userModel.getByEmail(request.params.email, function(result) {
+        console.log("delete get");
+        response.render("admin/delete", result);
+    })
+});
+
+router.post('/delete/:email', function(request, response) {
+
+    userModel.delete(request.params.email, function(status) {
+        if (status) {
+            response.redirect("/admin/userList");
+        } else {
+            response.redirect("/admin/delete/" + request.params.email);
+        }
+    })
+});
+
+router.get('/history/:email', function(request, response) {
+
+    customerhistoryModel.getByEmail(request.params.email, function(result) {
+        console.log("Order mal");
+        console.log(result);
+        if (result == "") {
+            console.log("Order mal naaaaiiiii");
+
+            response.redirect('../details/' + request.params.email);
+        } else {
+
+            response.render('admin/history', result);
+        }
+
+
+    });
+
+});
+
 
 
 module.exports = router;
