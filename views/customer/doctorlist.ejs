@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home page</title>
+</head>
+
+<body>
+    
+
+    <h1>DOCTOR</h1>
+    <table border="1">
+        <tr>
+
+            <td>USERNAME</td>
+            <td>PASSWORD</td>
+            <td>EMAIL</td>
+            <td>PHONE</td>
+            <td>ADDRESS</td>
+            
+            
+        </tr>
+
+
+
+        <% for(var i=0; i < user.length; i++){ if(user[i].type == "doctor") {%>
+
+            <tr>
+
+                <td>
+                    <%= user[i].username %>
+                </td>
+                <td>
+                    <%= user[i].password %>
+                </td>
+                <td>
+                    <%= user[i].email %>
+                </td>
+                <td>
+                    <%= user[i].phone %>
+                </td>
+                <td>
+                    <%= user[i].address %>
+                </td>
+               
+               
+
+            </tr>
+            <% }} %>
+
+
+    </table>
+    </br>
+    </br>
+
+   
+
+
+</body>
+
+</html>

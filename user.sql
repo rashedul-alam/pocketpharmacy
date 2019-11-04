@@ -3,9 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-
 -- Generation Time: Nov 04, 2019 at 07:46 AM
-
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -36,10 +34,8 @@ CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `address` varchar(60) NOT NULL,
-
   `type` varchar(20) NOT NULL,
   `salary` int(11) DEFAULT NULL
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -54,7 +50,6 @@ INSERT INTO `user` (`username`, `password`, `email`, `phone`, `address`, `type`,
 ('guluta', 'guluta', 'guluta@g.g', '545543', 'nikunjo', 'customer', 0),
 ('man11', 'man1', 'man1@m.c', '153434534', 'mirpr13', 'manager', 200),
 ('xxxxxx', 'xxxxxx', 'xxxxxx@x', '2113223', 'mirpr13', 'manager', 50);
-
 
 --
 -- Indexes for dumped tables
