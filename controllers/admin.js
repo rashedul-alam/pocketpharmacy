@@ -68,7 +68,7 @@ router.post('/edit/:email', function(request, response) {
 });
 
 
-router.get('/userList', function(request, response) {
+router.get('/userlist', function(request, response) {
     console.log("userlist get");
 
     userModel.getAll(function(result) {
@@ -76,6 +76,15 @@ router.get('/userList', function(request, response) {
         response.render('admin/userlist', { user: result });
     });
 });
+router.get('/customerlist', function(request, response) {
+    console.log("Customer list get");
+
+    userModel.getAll(function(result) {
+        console.log("Customer list get all");
+        response.render('admin/customerlist', { user: result });
+    });
+});
+
 router.get('/reports', function(request, response) {
     console.log("reports get");
 

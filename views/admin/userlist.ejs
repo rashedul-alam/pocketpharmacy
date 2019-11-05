@@ -13,6 +13,14 @@
     </br>
 
     <h2>ALL USER</h2>
+    <div>
+        <button>Sourt By:</button>
+        <div>
+            <a href="/admin/customerlist">customerlist</a>
+
+        </div>
+
+    </div>
     <table border="1">
         <tr>
 
@@ -160,7 +168,8 @@
                 <td>
                     <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
                     <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
+                    <a href="/admin/details/<%= user[i].email %>">Details</a>|
+                    <a href="">BAN</a>
                 </td>
             </tr>
             <% }} %>
@@ -267,7 +276,8 @@
                 <td>
                     <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
                     <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>
+                    <a href="/admin/details/<%= user[i].email %>">Details</a>|
+                    <a href="">BAN</a>
                 </td>
             </tr>
             <% }} %>
