@@ -1,33 +1,33 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WebScockets 101</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+        <link href="/styles.css" rel="stylesheet" />
+        <% console.log('websocket') %> 
+       
+    </head>
+    <body>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>chat</title>
-</head>
-<fieldset>
-    <p>HI welcom to chatbox,
-        <%= username %>
-    </p>
-    <p>Email :
-        <%= email %>
-    </p>
-
-   
+        <div id="mario-chat">
+            <h2> Chat</h2>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            <td>USERNAME</td>
+            <td>
+                <%= username %>
+            </td>
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send">Send</button>
+        </div>
+          
     
-     
-
-
-
-
-
-</fieldset>
-
-<body>
-
-
-</body>
-
+    
+    </body>
+<script src="/style/chat.js"></script>
+     <% console.log('chat.js') %>
 </html>

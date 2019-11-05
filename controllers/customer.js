@@ -1,12 +1,18 @@
 var express = require('express');
+var app = express();
+//var socket = require('socket.io') ;
+
+//   var io = socket(server) ;
+
 
 var userReports = require('./../models/user-reports');
-var inventoryModel = require('./../models/inventory-model');
 var userModel = require('./../models/user-model');
-var prescripsion = require('./../models/prescription-model');
+var prescripsion= require('./../models/prescription-model');
 var customerhistoryModel = require('./../models/customerhistory-model');
+
 var router = express.Router();
-//var io = require('socket.io') ;
+
+
 
 router.get('*', function(request, response, next) {
 
@@ -21,12 +27,7 @@ router.get('*', function(request, response, next) {
 
 router.get('/', function(request, response) {
     console.log("customer index");
-    inventoryModel.getAll(function(result) {
-        console.log("product list get all");
-        response.render('customer/index', { product: result, username: request.session.username, email: request.session.email });
-    });
-    //response.render('customer/index', { username: request.session.username, email: request.session.email });
-
+    response.render('customer/index', { username: request.session.username, email: request.session.email });
 });
 // router.get('/details/:email', function(request, response) {
 //     console.log("details");
@@ -84,6 +85,7 @@ router.post('/edit/:email', function(request, response) {
 });
 router.get('/chat/:email', function(request, response) {
     console.log("chat get");
+   
 
     userModel.getByEmail(request.params.email, function(result) {
         console.log('result');
@@ -91,6 +93,8 @@ router.get('/chat/:email', function(request, response) {
 
 
         response.render('customer/chat', result);
+
+        console.log('cht page...');
         // io.sockets.on('connection', function(socket){
         // console.log('Socket Connected...');
         // console.log(result);
@@ -103,21 +107,21 @@ router.get('/chat/:email', function(request, response) {
 
 
 // router.get('/history/:email', function(request, response) {
-// console.log("history get");
+   // console.log("history get");
 
-//  userModel.getByEmail(request.params.email, function(result) {
-//   console.log('result');
-
-
-
-// response.render('customer/history', result);
-// io.sockets.on('connection', function(socket){
-// console.log('Socket Connected...');
-// console.log(result);
-//  socket.on('email', function(data, callback);
+  //  userModel.getByEmail(request.params.email, function(result) {
+     //   console.log('result');
 
 
-// });
+
+       // response.render('customer/history', result);
+        // io.sockets.on('connection', function(socket){
+        // console.log('Socket Connected...');
+        // console.log(result);
+        //  socket.on('email', function(data, callback);
+
+
+    // });
 
 // });
 router.get('/reports/:email', function(request, response) {
@@ -154,7 +158,7 @@ router.post('/reports/:email', function(request, response) {
 
 
 
-
+       
 
 
     });
@@ -194,7 +198,7 @@ router.post('/uploadprescription/:email', function(request, response) {
 
 
 
-
+       
 
 
     });

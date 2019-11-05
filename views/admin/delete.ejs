@@ -7,72 +7,53 @@
 
 <body>
     <h1>Delete Page</h1>
-    <% if(type=="customer"){ %>
-
-        <a href="/admin/customerlist">Back</a>
-
-
-        <% } else if(type=="admin"){ %>
-
-            <a href="/admin/adminlist">Back</a>
-
-            <% } else if(type=="manager"){ %>
-
-                <a href="/admin/managerlist">Back</a>
+    <a href="/admin/userList">Back</a> |
+    <a href="/logout">logout</a>
 
 
-                <% } else if(type=="doctor"){ %>
+    <table border="1">
+        <tr>
+            <td>USERNAME</td>
+            <td>
 
-                    <a href="/admin/doctorlist">Back</a>
-
-
-                    <% } %>|
-                        <a href="/logout">logout</a>
-
-
-                        <table border="1">
-                            <tr>
-                                <td>USERNAME</td>
-                                <td>
-
-                                    <input type="text" name="username" value="<%= username %>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>password</td>
-                                <td>
-                                    <input type="password" name="password" value="<%= password %>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>email</td>
-                                <td>
-                                    <input type="email" name="email" value="<%= email %>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>phone</td>
-                                <td>
-                                    <input type="tel" name="phone" value="<%= phone %>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>address</td>
-                                <td>
-                                    <input type="text" name="address" value="<%= address %>">
-                                </td>
-                            </tr>
+                <input type="text" name="username" value="<%= username %>">
+            </td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>
+                <input type="password" name="password" value="<%= password %>">
+            </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>
+                <input type="email" name="email" value="<%= email %>">
+            </td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td>
+                <input type="tel" name="phone" value="<%= phone %>">
+            </td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td>
+                <input type="text" name="address" value="<%= address %>">
+            </td>
+        </tr>
 
 
 
 
-                        </table>
+    </table>
 
 
-                        <form method="post">
-                            <h3>Are you sure?</h3>
-                            <input type="submit" name="submit" value="Confirm">
-                        </form>
+    <form method="post">
+        <h3>Are you sure?</h3>
+        <input type="submit" name="submit" value="Confirm">
+    </form>
 
 </body>
 

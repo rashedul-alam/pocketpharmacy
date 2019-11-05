@@ -25,46 +25,6 @@
     <a href="../customer/doctorlist/<%= email %>">
     doctorlist</a></br>
 
-    <table border="1">
-        <tr>
-            <td>Picture</td>
-
-            <td>Product Name</td>
-
-            <td>Price</td>
-            <td>Add TO Cart</td>
-
-        </tr>
-
-
-        <% console.log("product count:" +product.length);%>
-            <% for(var i=0; i < product.length; i++){ %>
-
-                <tr>
-                    <td>
-                        <p>Pic</p>
-                    </td>
-
-                    <td>
-                        <%= product[i].productname %>
-                    </td>
-                    <td>
-                        <%= product[i].price %>
-                    </td>
-
-
-                    <td>
-                        <button><a href="">Add</a> </button>
-                    </td>
-
-
-                </tr>
-                <% } %>
-
-
-    </table>
-
-
 
 
 
