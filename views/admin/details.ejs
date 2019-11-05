@@ -6,66 +6,85 @@
 </head>
 
 <body>
-    <h1>User Details</h1>
-    <a href="/admin/userList">UserList</a> |
-    <a href="/logout">logout</a>
-    </br>
-    </br>
+    <h1>Details</h1>
+    <% if(type=="customer"){ %>
 
-    <table border="1">
-        <tr>
-            <td>USERNAME</td>
-            <td>
-                <%= username %>
-            </td>
-        </tr>
-        <tr>
-            <td>password</td>
-            <td>
-                <%= password %>
-            </td>
-        </tr>
-        <tr>
-            <td>email</td>
-            <td>
-                <%= email %>
-            </td>
-        </tr>
-        <tr>
-            <td>phone</td>
-            <td>
-                <%= phone %>
-            </td>
-        </tr>
-        <tr>
-            <td>address</td>
-            <td>
-                <%= address %>
-            </td>
-        </tr>
-        <tr>
-            <td>type</td>
-            <td>
-                <%= type %>
-            </td>
-        </tr>
-        <% if(type=="manager" || type=="doctor"){ %>
-            <tr>
-                <td>Salary</td>
-                <td>
-                    <%= salary %>
-                </td>
-            </tr>
-            <% } %>
-                <% if(type=="customer"){ %>
+        <a href="/admin/customerlist">Back</a>
+
+
+        <% } else if(type=="admin"){ %>
+
+            <a href="/admin/adminlist">Back</a>
+
+            <% } else if(type=="manager"){ %>
+
+                <a href="/admin/managerlist">Back</a>
+
+
+                <% } else if(type=="doctor"){ %>
+
+                    <a href="/admin/doctorlist">Back</a>
+
+
+                    <% } %> |
+                        <a href="/logout">logout</a>
+                        </br>
+                        </br>
+
+                        <table border="1">
+                            <tr>
+                                <td>USERNAME</td>
+                                <td>
+                                    <%= username %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>
+                                    <%= password %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>
+                                    <%= email %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>phone</td>
+                                <td>
+                                    <%= phone %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>address</td>
+                                <td>
+                                    <%= address %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>type</td>
+                                <td>
+                                    <%= type %>
+                                </td>
+                            </tr>
+                            <% if(type=="manager" || type=="doctor"){ %>
+                                <tr>
+                                    <td>Salary</td>
+                                    <td>
+                                        <%= salary %>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <!-- <% if(type=="customer"){ %>
                     <tr>
                         <td><a href="../history/<%= email %>">Order History</a></td>
 
-                    </tr>
-                    <% } %>
+                    </tr> -->
+                                    <% } %>
 
 
-    </table>
+                        </table>
 
 
 </body>

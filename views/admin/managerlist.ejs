@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manager page</title>
+</head>
+
+<body>
+    <h1>Manager List</h1>
+    <a href="/admin/userlist">Back</a>|
+    <a href="/logout">logout</a>
+    </br>
+    </br>
+
+
+
+
+
+    <h2>MANAGER</h2>
+    <table border="1">
+        <tr>
+
+            <td>USERNAME</td>
+            <td>PASSWORD</td>
+            <td>EMAIL</td>
+            <td>PHONE</td>
+            <td>ADDRESS</td>
+            <td>TYPE</td>
+            <td>SALARY</td>
+            <td>ACTION</td>
+        </tr>
+
+
+
+        <% for(var i=0; i < user.length; i++){ if(user[i].type == "manager") {%>
+
+            <tr>
+
+                <td>
+                    <%= user[i].username %>
+                </td>
+                <td>
+                    <%= user[i].password %>
+                </td>
+                <td>
+                    <%= user[i].email %>
+                </td>
+                <td>
+                    <%= user[i].phone %>
+                </td>
+                <td>
+                    <%= user[i].address %>
+                </td>
+                <td>
+                    <%= user[i].type %>
+                </td>
+                <td>
+                    <%= user[i].salary %>
+                </td>
+
+                <td>
+                    <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
+                    <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
+                    <a href="/admin/details/<%= user[i].email %>">Details</a>|
+                    <a href="">BAN</a>
+                </td>
+            </tr>
+            <% }} %>
+
+
+    </table>
+    </br>
+    </br>
+
+
+
+</body>
+
+</html>
