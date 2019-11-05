@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Customer page</title>
+    <title>DoctorList</title>
 </head>
 
 <body>
-    <h1>Customer List</h1>
+    <h1>Doctor List</h1>
     <a href="/admin/userlist">Back</a>|
     <a href="/logout">logout</a>
     </br>
@@ -16,7 +16,7 @@
 
 
 
-    <h2>CUSTOMER</h2>
+    <h2>DOCTOR</h2>
     <table border="1">
         <tr>
 
@@ -26,12 +26,13 @@
             <td>PHONE</td>
             <td>ADDRESS</td>
             <td>TYPE</td>
+            <td>SALARY</td>
             <td>ACTION</td>
         </tr>
 
 
 
-        <% for(var i=0; i < user.length; i++){ if(user[i].type == "customer") {%>
+        <% for(var i=0; i < user.length; i++){ if(user[i].type == "doctor") {%>
 
             <tr>
 
@@ -53,14 +54,14 @@
                 <td>
                     <%= user[i].type %>
                 </td>
-
+                <td>
+                    <%= user[i].salary %>
+                </td>
 
                 <td>
                     <a href="/admin/edit/<%= user[i].email %>">Edit</a> |
                     <a href="/admin/delete/<%= user[i].email %>">Delete</a> |
-                    <a href="/admin/details/<%= user[i].email %>">Details</a>|
-                    <a href="./history/<%= user[i].email %>">Order History</a>
-                    <a href="">BAN</a>
+                    <a href="/admin/details/<%= user[i].email %>">Details</a>
                 </td>
             </tr>
             <% }} %>
